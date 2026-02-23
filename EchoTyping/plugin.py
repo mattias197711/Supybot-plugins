@@ -61,6 +61,8 @@ class EchoTyping(callbacks.Plugin):
     def doTagmsg(self, irc, msg):
         if not msg.channel:
             return
+        if not self.registryValue("enable", msg.channel, irc.network):
+            return
         their_typing_status = msg.server_tags.get("+typing")
         if their_typing_status is None:
             return

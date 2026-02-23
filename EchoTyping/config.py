@@ -51,9 +51,9 @@ def configure(advanced):
 
 
 EchoTyping = conf.registerPlugin("EchoTyping")
-# This is where your configuration variables (if any) should go.  For example:
-# conf.registerGlobalValue(EchoTyping, 'someConfigVariableName',
-#     registry.Boolean(False, _("""Help for someConfigVariableName.""")))
+conf.registerChannelValue(EchoTyping, 'enable',
+    registry.Boolean(True, _("""Determines whether typing is enabled on this
+    channel.""")))
 
 
 # vim:set shiftwidth=4 tabstop=4 expandtab textwidth=79:
